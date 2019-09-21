@@ -2,32 +2,34 @@
 
 using namespace std;
 
-void insertionSort(int array[], int len){
-    int i, j, temp;
-    for(i=1; i<len; i++){
-        j=i;
-        while(j>0 && array[j-1]>array[j]){
-            temp=array[j];
-            array[j]=array[j-1];
-            array[j-1]=temp;
-            j=j-1;
-        }
-    }
+
+void insertionSort(int a[], int n){
+	int i, j;
+	for(i=1;i<n;i++){           //first er ta sorted ase dhorbo
+		for(j = i; j>0 ; j--){
+		    if(a[j]<a[j-1]){
+                int temp = a[j];        //swap(a[k],a[k-1]);
+                a[j] = a[j-1];
+                a[j-1] = temp;
+		    }
+
+		}
+
+	}
 }
 
 int main(){
-    int len, array[100], i;
-    cout<<"Input length : ";
-    cin>>len;
-    cout<<"Input array :"<<endl;
-    for(i=0; i<len; i++)
-        cin>>array[i];
-
-    insertionSort(array, len);
-
-    cout<<"Output"<<endl;
-    for(i=0; i<len; i++)
-        cout<<array[i]<<" ";
+    int  i, n;
+    int num[100];
+    cout<<"Input the length of array :"<<endl;
+    cin>>n;
+    cout<<"Input : "<<endl;
+    for(i=0; i<n; i++)
+        cin>>num[i];
+    insertionSort(num, n);
+    cout<<"output :"<<endl;
+    for (i=0;i<n ;i++ )
+    	cout<<num[i]<<endl;
 
 return 0;
 }

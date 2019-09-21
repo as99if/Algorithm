@@ -1,10 +1,8 @@
-#include<iostream>
-
-using namespace std;
+#include<stdio.h>
 
 void bubble(int num[], int n){
     int i, j, temp;
-    for(j=0; j<n-1; j++){           //pashapashi duita duita kore swap kore
+    for(j=0; j<n-1; j++){
         for(i=0; i<n-1; i++){
             if(num[i]>num[i+1]){
                 temp=num[i];
@@ -17,14 +15,14 @@ void bubble(int num[], int n){
 
 int main(){
     int num[100], i, n;
-    cout<<"input array length :"<<endl;
-    cin>>n;
-    cout<<"Input :"<<endl;
+    printf("input array length : ");
+    scanf("%d", &n);
+    printf("Input :\n");
     for(i=0; i<n; i++)
-        cin>>num[i];
+        scanf("%d", &num[i]);
     bubble(num, n);
-    cout<<"output :"<<endl;
+    printf("output :\n");
     for(i=0; i<n; i++)
-        cout<<num[i]<<endl;
+        printf("%d ", num[i]);
 return 0;
 }
